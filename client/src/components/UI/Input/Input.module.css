@@ -1,0 +1,36 @@
+.input {
+	width: 100%;
+
+	padding: 10px;
+	margin-bottom: 10px;
+
+	color: var(--contrast-color);
+	font-size: 18px;
+
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--contrast-color);
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid purple;
+	}
+
+	&::placeholder {
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+
+.success {
+	border-bottom: 2px solid rgb(11, 200, 11);
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid rgb(11, 200, 11);
+	}
+}
+
+.input.error {
+	border-bottom: 2px solid red;
+}

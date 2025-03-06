@@ -1,0 +1,20 @@
+.header {
+	padding: 10px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.leftNav,
+.rightNav {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.icon {
+	font-size: 1.6rem;
+}

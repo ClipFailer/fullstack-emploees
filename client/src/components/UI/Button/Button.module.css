@@ -1,0 +1,26 @@
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+
+	width: 100%;
+
+	padding: 5px;
+
+	border-radius: 8px;
+	border: none;
+
+	font-size: 1rem;
+	font-weight: 700;
+
+	cursor: pointer;
+
+	transition: background, outline, color 0.2s linear;
+
+	&:hover {
+		background: var(--bg-color);
+		outline: 2px solid #fff;
+		color: var(--contrast-color);
+	}
+}
