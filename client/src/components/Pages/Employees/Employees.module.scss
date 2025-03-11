@@ -1,0 +1,33 @@
+.table {
+	width: 100%;
+
+	margin-top: 20px;
+
+	th {
+		padding: 5px;
+
+		font-size: 20px;
+		font-weight: 700;
+
+		// border-bottom: 1px solid #fff;
+	}
+	thead {
+		background-color: #202020;
+	}
+
+	td {
+		padding: 5px;
+
+		font-size: 18px;
+
+		background-color: rgb(84, 84, 84);
+
+		cursor: pointer;
+
+		transition: background-color 0.2s linear;
+
+		&:hover {
+			background-color: rgb(73, 73, 73);
+		}
+	}
+}

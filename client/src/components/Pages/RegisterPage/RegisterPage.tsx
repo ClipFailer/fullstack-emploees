@@ -30,76 +30,88 @@ export default function RegisterPage() {
 
 	return (
 		<div className={styles.registerPage}>
-			<h1 className={styles.formTitle}>Регистрация</h1>
 			<form
 				action="POST"
 				className={styles.form}
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<Input
-					type="text"
-					placeholder="Email"
-					error={emailError ? true : false}
-					register={{
-						...register('email', {
-							required: 'Это поле обязательно',
-							pattern: {
-								value: /^[A-Z0-9._%+-]+@[A-Z0-9._%+-]+\.[A-Z]{2,3}$/i,
-								message: 'Некорректная почта',
-							},
-						}),
-					}}
-				/>
-				{emailError && <span className={styles.error}>{emailError}</span>}
-				<Input
-					type="text"
-					placeholder="Имя"
-					error={nameError ? true : false}
-					register={{
-						...register('name', {
-							required: 'Это поле обязательно',
-						}),
-					}}
-				/>
-				{nameError && <span className={styles.error}>{nameError}</span>}
-				<Input
-					type="password"
-					placeholder="Пароль"
-					error={passwordError ? true : false}
-					register={{
-						...register('password', {
-							required: 'Это поле обязательно',
-							minLength: {
-								value: 6,
-								message: 'Пароль не может быть менее 6-ти символов',
-							},
-						}),
-					}}
-				/>
-				{passwordError && <span className={styles.error}>{passwordError}</span>}
-				<Input
-					type="password"
-					placeholder="Подтверждение пароля"
-					error={confirmPasswordError ? true : false}
-					register={{
-						...register('confirmPassword', {
-							required: 'Это поле обязательно',
-							validate: value => value === password || 'Пароли не совпадают',
-						}),
-					}}
-				/>
-				{confirmPasswordError && (
-					<span className={styles.error}>{confirmPasswordError}</span>
-				)}
+				<h2 className={styles.formTitle}>Регистрация</h2>
+				<div>
+					<Input
+						type="text"
+						placeholder="Email"
+						error={emailError ? true : false}
+						register={{
+							...register('email', {
+								required: 'Это поле обязательно',
+								pattern: {
+									value: /^[A-Z0-9._%+-]+@[A-Z0-9._%+-]+\.[A-Z]{2,3}$/i,
+									message: 'Некорректная почта',
+								},
+							}),
+						}}
+					/>
+					{emailError && <span className={styles.error}>{emailError}</span>}
+				</div>
+				<div>
+					<Input
+						type="text"
+						placeholder="Имя"
+						error={nameError ? true : false}
+						register={{
+							...register('name', {
+								required: 'Это поле обязательно',
+							}),
+						}}
+					/>
+					{nameError && <span className={styles.error}>{nameError}</span>}
+				</div>
+				<div>
+					<Input
+						type="password"
+						placeholder="Пароль"
+						error={passwordError ? true : false}
+						register={{
+							...register('password', {
+								required: 'Это поле обязательно',
+								minLength: {
+									value: 6,
+									message: 'Пароль не может быть менее 6-ти символов',
+								},
+							}),
+						}}
+					/>
+					{passwordError && (
+						<span className={styles.error}>{passwordError}</span>
+					)}
+				</div>
+				<div>
+					<Input
+						type="password"
+						placeholder="Подтверждение пароля"
+						error={confirmPasswordError ? true : false}
+						register={{
+							...register('confirmPassword', {
+								required: 'Это поле обязательно',
+								validate: value => value === password || 'Пароли не совпадают',
+							}),
+						}}
+					/>
+					{confirmPasswordError && (
+						<span className={styles.error}>{confirmPasswordError}</span>
+					)}
+				</div>
 
-				<h4 className={styles.loginRef}>
-					Уже зарегистрированы ?{' '}
-					<Link to={Paths.login} style={{ color: '#7171f8' }}>
-						Войти
-					</Link>
-				</h4>
+				<div>
+					<h4 className={styles.loginRef}>
+						Уже зарегистрированы ?{' '}
+						<Link to={Paths.login} style={{ color: '#7171f8' }}>
+							Войти
+						</Link>
+					</h4>
 
-				<Button type={'submit'}>Зарегистрироваться</Button>
+					<Button type={'submit'}>Зарегистрироваться</Button>
+				</div>
 			</form>
 		</div>
 	)

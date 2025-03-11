@@ -1,9 +1,10 @@
 const { prisma } = require('../prisma/prisma-client')
 const jwt = require('jsonwebtoken')
 
-/*
+/**
  * @route GET /api/employees
- */
+ * */
+
 const all = async (req, res) => {
 	try {
 		const employees = await prisma.employee.findMany({
@@ -18,9 +19,10 @@ const all = async (req, res) => {
 	}
 }
 
-/*
+/**
  * @route POST /api/employees/add
  */
+
 const add = async (req, res) => {
 	try {
 		const data = req.body
@@ -42,7 +44,7 @@ const add = async (req, res) => {
 	}
 }
 
-/*
+/**
  * @route POST /api/employees/remove/:id
  */
 const remove = async (req, res) => {
@@ -61,7 +63,7 @@ const remove = async (req, res) => {
 	}
 }
 
-/*
+/**
  * @route PUT /api/employees/edit/:id
  */
 const edit = async (req, res) => {
@@ -81,7 +83,7 @@ const edit = async (req, res) => {
 	}
 }
 
-/*
+/**
  * @route get /api/employees/:id
  */
 const employee = async (req, res) => {

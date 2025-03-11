@@ -1,0 +1,52 @@
+.modal {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba(0, 0, 0, 0.521);
+}
+
+.errorBody {
+	position: relative;
+
+	max-width: 400px;
+	width: 100%;
+	/* height: 300px; */
+
+	padding: 10px;
+
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.title {
+	color: tomato;
+	text-align: center;
+}
+
+.closeBtn {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+
+	font-size: 24px;
+	font-weight: 700;
+
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+}
+
+.text {
+	text-align: center;
+	font-weight: 500;
+	font-size: 18px;
+	color: #000;
+}
