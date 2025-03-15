@@ -1,7 +1,7 @@
 import { Employee } from '@prisma/client'
 import { api } from './api'
 
-// interface Employee
+export type EmployeeData = Omit<Employee, 'id'>
 
 export const employeesApi = api.injectEndpoints({
 	endpoints: builder => ({
@@ -30,7 +30,7 @@ export const employeesApi = api.injectEndpoints({
 				body: { id },
 			}),
 		}),
-		addEmployee: builder.query<Employee, Employee>({
+		addEmployee: builder.mutation<Employee, EmployeeData>({
 			query: employee => ({
 				url: '/employees/add',
 				method: 'POST',
@@ -45,7 +45,7 @@ export const {
 	useGetEmployeeQuery,
 	useEditEmployeeMutation,
 	useRemoveEmployeeMutation,
-	useAddEmployeeQuery,
+	useAddEmployeeMutation,
 } = employeesApi
 
 export const {

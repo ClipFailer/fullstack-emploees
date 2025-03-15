@@ -1,0 +1,15 @@
+.employeeForm {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	margin-bottom: 20px;
+}
+
+.error {
+	font-size: 16px;
+	color: tomato;
+	font-weight: 700;
+
+	margin: 0;
+}

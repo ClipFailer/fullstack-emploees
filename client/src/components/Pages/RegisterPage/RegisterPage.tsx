@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserData, useRegisterMutation } from '../../../app/services/auth'
 import { Paths } from '../../../paths'
 import { Button } from '../../UI/Button/Button'
 import { Input } from '../../UI/Input/Input'
@@ -17,6 +18,10 @@ export default function RegisterPage() {
 		mode: 'onChange',
 	})
 
+	const navigate = useNavigate()
+
+	const [registerUser, registerUserResult] = useRegisterMutation()
+
 	const password = watch('password')
 
 	const emailError = formState.errors['email']?.message
@@ -24,8 +29,14 @@ export default function RegisterPage() {
 	const passwordError = formState.errors['password']?.message
 	const confirmPasswordError = formState.errors['confirmPassword']?.message
 
-	const onSubmit: SubmitHandler<RegisterData> = data => {
-		console.log(data)
+	const onSubmit: SubmitHandler<RegisterData> = async data => {
+		try {
+			delete data.confirmPassword
+			await registerUser(data as UserData)
+			navigate(Paths.home)
+
+			console.log(data)
+		} catch (error) {}
 	}
 
 	return (

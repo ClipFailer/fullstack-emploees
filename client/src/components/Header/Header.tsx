@@ -34,6 +34,7 @@ export const Header = () => {
 
 				{user ? (
 					<div className={styles.rightNav}>
+						<div>{user.name}</div>
 						<Button onClick={onLogoutClick}>
 							<IoIosExit />
 							Выйти

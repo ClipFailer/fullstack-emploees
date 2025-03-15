@@ -27,6 +27,6 @@ const employeesSlice = createSlice({
 	},
 })
 
-export default employeesApi.reducer
+export default employeesSlice.reducer
 
 export const selectEmployees = (state: RootState) => state.employees
